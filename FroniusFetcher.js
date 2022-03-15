@@ -64,7 +64,7 @@ class FroniusFetcher {
             energyNow: this._getRandomArbitrary(1, 10000)
         };
 
-        console.log(`Generated dummy data: ${convertedData}`);
+        console.log(`Generated dummy data: ${JSON.stringify(convertedData)}`);
 
         return convertedData;
     }
