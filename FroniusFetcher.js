@@ -40,9 +40,9 @@ class FroniusFetcher {
     convertSiteData(rawData) {
         const targetData = rawData.Body.Data.Site;
         const convertedData = {
-            energyDay: targetData.E_Day,
-            energyTotal: targetData.E_Total,
-            energyYear: targetData.E_Year,
+            energyDay: Math.round(targetData.E_Day),
+            energyTotal: Math.round(targetData.E_Total),
+            energyYear: Math.round(targetData.E_Year),
             energyNow: targetData.P_PV,
             meterLocation: targetData.Meter_Location,
             mode: targetData.Mode,
@@ -63,6 +63,8 @@ class FroniusFetcher {
             energyYear: this._getRandomArbitrary(20000, 500000),
             energyNow: this._getRandomArbitrary(1, 10000)
         };
+
+        console.log(`Generated dummy data: ${convertedData}`);
 
         return convertedData;
     }
